@@ -1,4 +1,4 @@
-## device.getExtras: Получить дополнительный параметр устройства
+## device.getExtras: Получить extras устройства
 
 > Пример запроса:
 
@@ -10,13 +10,13 @@ let extras = await device.getExtras('workshops');
 console.log('workshops extras', extras);
 ```
 
-Метод получает данные установленные устройству методом [setExtras]()
+Метод получает данные установленные устройству методом [setExtras](/docs/v3/device/transport/method/setExtras)
 
 ### Аргументы
 
 Аргумент | Описание
 -------- | --------
-1-й, name | Название дополнительного параметра
+1-й, name | Название extras
 
 ### Ответ
 
