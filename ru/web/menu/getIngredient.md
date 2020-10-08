@@ -19,6 +19,7 @@ $data = sendRequest($url);
   "response":{  
     "ingredient_id":"91",
     "ingredient_name":"Jack Daniels",
+    "ingredient_barcode": "",
     "category_id":"3",
     "ingredient_left":"442.85000",
     "limit_value":"0",

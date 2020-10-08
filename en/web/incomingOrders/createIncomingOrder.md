@@ -156,8 +156,16 @@ Parameter | Description
 --------- | -----------
 product_id | Product ID
 modificator_id | Product modifier ID
+modification | Dish modifications; are not transmitted by default
 count | A mandatory parameter, product count
 price | The price of goods in kopecks, by default the price of the goods in the indicated institution is taken
+
+The `modification` parameter should contain a JSON `line`. JSON should consist of an array of objects, each of which should contain the following parameters:
+
+Parameter | Description
+--------- | -----------
+m | Dish modification ID
+a | Dish modifications count
 
 The `payment` parameter should contain an object containing the following parameters:
 
@@ -166,6 +174,8 @@ Parameter | Description
 type | The status confirming a prepayment: 0—it has not been done, 1—it has been done. The default value is 0.
 sum | The amount paid in kopecks
 currency | The ISO currency code of the payment; it must match the account currency, for example, UAH—hryvnia, RUB—ruble, USD—dollar
+
+!> If there was no prepayment in the online order, do not send the array `payment` in the request.
 
 The `promotion` parameter contains an array of objects, each of which contains the following parameters:
 

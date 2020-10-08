@@ -17,6 +17,17 @@ $ingredient = [
 $data = sendRequest($url, 'post', $ingredient);
 ```
 
+> Request example:
+
+```json
+{
+  "ingredient_name": "Клубника",
+  "category_id": 4,
+  "type": "p",
+  "weight_ingredient": 200
+}
+```
+
 > Response example:
 
 ```json
@@ -38,6 +49,7 @@ Parameter | Description
 ingredient_name | Ingredient name
 category_id | Ingredient category ID
 type | Ingredient unit: kg—kilograms, p—pieces, l—liters
+ingredient_barcode | Ingredient barcode
 weight_ingredient | Ingredient weight if the ingredient is sold by the piece
 loss_clear | Loss rate at the ingredient cleaning if the ingredient is not sold by the piece
 loss_cook | Loss rate at the ingredient baking if the ingredient is not sold by the piece

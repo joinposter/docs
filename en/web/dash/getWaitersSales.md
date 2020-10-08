@@ -81,3 +81,4 @@ profit_netto | Profit without VAT in kopecks. Is returned if the 'Calculate cost
 clients | Closed orders count
 middle_invoice | An average check in hryvnias/rubles
 middle_time | Total time spent on service in minutes
+worked_time | Worked time, waiter’s in minutes

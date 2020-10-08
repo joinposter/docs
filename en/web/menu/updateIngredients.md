@@ -1,53 +1,66 @@
-## menu.updateIngredient: Update Ingredient Properties
+## menu.updateIngredients: Update list of Ingredients
 
 > Request example:
 
 ```php
 <?php
-$url = 'https://joinposter.com/api/menu.updateIngredient'
+$url = 'https://joinposter.com/api/menu.updateIngredients'
  . '?token=687409:4164553abf6a031302898da7800b59fb';
 
-$ingredient = [
-    'id'                => 811,
-    'ingredient_name'   => 'Лимон',
-    'category_id'       => 4,
-    'type'              => 'p',
-    'weight_ingredient' => 150,
+$ingredients = [
+    [
+        'id'              => '7',
+        'ingredient_name' => 'Яблоко',
+        'type'            => 'p',
+    ],
+    [
+        'id'              => '8',
+        'ingredient_name' => 'Груша',
+        'type'            => 'p',
+    ]
 ];
 
-$data = sendRequest($url, 'post', $ingredient);
+$data = sendRequest($url, 'post', $ingredients);
 ```
 
 > Request example:
 
 ```json
-{
-  "id": 811,
-  "ingredient_name": "Лимон",
-  "category_id": 4,
-  "type": "p",
-  "weight_ingredient": 150
-}
+[
+  {
+    "id": 7,
+    "ingredient_name": "Яблоко",
+    "type": "p"
+  },
+  {
+    "id": 8,
+    "ingredient_name": "Груша",
+    "type": "p"
+  }
+]
 ```
 
 > Response example:
 
 ```json
-{  
-  "response": 811
+{
+  "response": [
+    7,
+    8
+  ]
 }
 ```
 
-The method updates the ingredient properties
+The method updates a list of ingredients
 
 ### HTTP request
 
-`GET https://joinposter.com/api/menu.updateIngredient`
+`POST https://joinposter.com/api/menu.updateIngredients`
 
-### POST parameters of the menu.updateIngredient request
+### POST parameters of the menu.updateIngredients
 
 Parameter | Description
---------- | -----------
+-------- | --------
 id | Ingredient ID
 ingredient_name | Ingredient name
 category_id | Ingredient category ID
@@ -61,9 +74,8 @@ loss_stew | Loss rate at the ingredient stewing if the ingredient is not sold by
 loss_bake | Loss rate at the ingredient cooking if the ingredient is not sold by the piece
 partial_write_off | The status of an ingredient sold by the piece being allowed to be wasted as the one sold by fractions: 0—not allowed, 1—allowed
 
-### The menu.updateIngredient response parameters
+### The menu.updateIngredients response parameters
 
 Parameter | Description
---------- | -----------
-response | The updated ingredient ID
-
+-------- | --------
+response | Array of id updated ingredients

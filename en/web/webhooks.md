@@ -118,6 +118,7 @@ clients_group | Customer group
 promotion | Promotion
 promotion_prize | Accumulation of promo points
 client_ewallet | Customer’s e-Wallet
+loyalty_rule | Rules for switching between customer groups
 
 ### client_ewallet
 

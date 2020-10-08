@@ -1,58 +1,66 @@
-## menu.updateIngredient: Update Ingredient Properties
+## menu.createIngredients: Create list of Ingredients
 
 > Request example:
 
 ```php
 <?php
-$url = 'https://joinposter.com/api/menu.updateIngredient'
+$url = 'https://joinposter.com/api/menu.createIngredients'
  . '?token=687409:4164553abf6a031302898da7800b59fb';
 
-$ingredient = [
-    'id'                => 811,
-    'ingredient_name'   => 'Лимон',
-    'category_id'       => 4,
-    'type'              => 'p',
-    'weight_ingredient' => 150,
+$ingredients = [
+    [
+        'ingredient_name' => 'Яблоко',
+        'type'            => 'p',
+    ],
+    [
+        'ingredient_name' => 'Груша',
+        'type'            => 'p',
+    ]
 ];
 
-$data = sendRequest($url, 'post', $ingredient);
+$data = sendRequest($url, 'post', $ingredients);
 ```
 
 > Request example:
 
 ```json
-{
-  "id": 811,
-  "ingredient_name": "Лимон",
-  "category_id": 4,
-  "type": "p",
-  "weight_ingredient": 150
-}
+[
+  {
+    "ingredient_name": "Яблоко",
+    "type": "p"
+  },
+  {
+    "ingredient_name": "Груша",
+    "type": "p"
+  }
+]
 ```
 
 > Response example:
 
 ```json
-{  
-  "response": 811
+{
+  "response": [
+    7,
+    8
+  ]
 }
 ```
 
-The method updates the ingredient properties
+The method creates a list of ingredients
 
 ### HTTP request
 
-`GET https://joinposter.com/api/menu.updateIngredient`
+`POST https://joinposter.com/api/menu.createIngredients`
 
-### POST parameters of the menu.updateIngredient request
+### POST parameters of the menu.createIngredients
 
 Parameter | Description
---------- | -----------
-id | Ingredient ID
+-------- | --------
 ingredient_name | Ingredient name
 category_id | Ingredient category ID
+type | Ingredient unit: kg—kilograms, p—pieces, l—liters
 ingredient_barcode | Ingredient barcode
-type | Ingredient unit: kg—kilograms, p—pieces, l—liters You can not change the ingredient unit if it has already been supplied in storage.
 weight_ingredient | Ingredient weight if the ingredient is sold by the piece
 loss_clear | Loss rate at the ingredient cleaning if the ingredient is not sold by the piece
 loss_cook | Loss rate at the ingredient baking if the ingredient is not sold by the piece
@@ -61,9 +69,8 @@ loss_stew | Loss rate at the ingredient stewing if the ingredient is not sold by
 loss_bake | Loss rate at the ingredient cooking if the ingredient is not sold by the piece
 partial_write_off | The status of an ingredient sold by the piece being allowed to be wasted as the one sold by fractions: 0—not allowed, 1—allowed
 
-### The menu.updateIngredient response parameters
+### The menu.createIngredients response parameters
 
 Parameter | Description
---------- | -----------
-response | The updated ingredient ID
-
+-------- | --------
+response | Array of id created ingredients

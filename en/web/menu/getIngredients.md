@@ -18,6 +18,7 @@ $data = sendRequest($url);
     {  
       "ingredient_id":"91",
       "ingredient_name":"Jack Daniels",
+      "ingredient_barcode": "",
       "category_id":"3",
       "ingredient_left":"443.45000",
       "limit_value":"0",
@@ -35,6 +36,7 @@ $data = sendRequest($url);
     {  
       "ingredient_id":"73",
       "ingredient_name":"Авокадо",
+      "ingredient_barcode": "",
       "category_id":"0",
       "ingredient_left":"22.00000",
       "limit_value":"0",
@@ -52,6 +54,7 @@ $data = sendRequest($url);
     {  
       "ingredient_id":"74",
       "ingredient_name":"Айсберг с-т",
+      "ingredient_barcode": "",
       "category_id":"0",
       "ingredient_left":"379.09000",
       "limit_value":"0",

@@ -224,6 +224,32 @@ profit | The location’s product net profit in kopecks
 profit_netto | The location’s product net profit without VAT in kopecks. Is returned if the 'Calculate cost and net profit' setting is enabled
 visible | The status of the product being visible at the location: 0 — not visible, 1 — visible
 
+Inside the `group_modifications` parameter, there is an array, each element of which contains the following parameters:
+
+Parameter | Description
+--------- | -----------
+dish_modification_group_id | Modifiers set ID
+name | Modifiers set name
+num_min | The minimum number of dish modifications that can be selected in an order from a set
+num_max | The maximum number of dish modifications that can be selected in an order from a set
+is_deleted | Is the set of dish modifications deleted. 0 - no, 1 - yes
+modifications | Array of modifications in a set
+
+Inside the `modifications` parameter, which is contained in `group_modifications`, there is an array, each element of which contains the following parameters:
+
+Parameter | Description
+--------- | -----------
+dish_modification_id | Modification ID
+name | Dish modification name
+ingredient_id | Ingredient ID (returned if it’s the product or ingredient)
+type | Type of dish modification: 1 - product, 2 - dish, 3 - prepack, 8 - product modification, 10 - ingredient, 0 - No extra ingredients
+brutto | Brutto of dish modification
+price | Price of dish modification in money
+photo_orig | Original photo of dish modification
+photo_large | Large photo of dish modification
+photo_small | Small photo of dish modification
+last_modified_time | Last modified time of dish modification
+
 Inside the `ingredients` parameter, there is an array, each element of which contains the following parameters:
 
 Parameter | Description

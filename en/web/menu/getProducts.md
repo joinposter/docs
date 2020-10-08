@@ -123,6 +123,165 @@ $data = sendRequest($url);
          "ingredient_id":"8",
          "cooking_time": "0",
          "out":0
+      },
+      {
+         "barcode":"",
+         "category_name":"Top screen",
+         "unit":"kg",
+         "cost":"0",
+         "cost_netto":"0",
+         "fiscal":"0",
+         "hidden":"0",
+         "menu_category_id":"0",
+         "workshop":"1",
+         "nodiscount":"0",
+         "photo":"",
+         "photo_origin":null,
+         "price":{
+            "1":"30000",
+            "2":"30000"
+         },
+         "product_code":"",
+         "product_id":"30",
+         "product_name":"Set menu",
+         "profit":{
+            "1":"30000",
+            "2":"30000"
+         },
+         "sort_order":"999",
+         "tax_id":"0",
+         "product_tax_id":"0",
+         "type":"2",
+         "weight_flag":"0",
+         "color":"white",
+         "spots":[
+            {
+               "spot_id":"1",
+               "price":"30000",
+               "profit":"30000",
+               "profit_netto":"30000",
+               "visible":"1"
+            },
+            {
+               "spot_id":"2",
+               "price":"30000",
+               "profit":"30000",
+               "profit_netto":"30000",
+               "visible":"1"
+            }
+         ],
+         "ingredient_id":"0",
+         "cooking_time":"0",
+         "different_spots_prices":"0",
+         "fiscal_code":"",
+         "group_modifications":[
+            {
+               "dish_modification_group_id":29,
+               "name":"Drinks",
+               "num_min":1,
+               "num_max":3,
+               "is_deleted":0,
+               "modifications":[
+                  {
+                     "dish_modification_id":142,
+                     "name":"Cola",
+                     "ingredient_id":77,
+                     "type":2,
+                     "brutto":1,
+                     "price":99.99,
+                     "photo_orig":"",
+                     "photo_large":"",
+                     "photo_small":"",
+                     "last_modified_time":"2020-05-26 15:33:30"
+                  },
+                  {
+                     "dish_modification_id":143,
+                     "name":"Fanta",
+                     "ingredient_id":33,
+                     "type":10,
+                     "brutto":200,
+                     "price":99.99,
+                     "photo_orig":"",
+                     "photo_large":"",
+                     "photo_small":"",
+                     "last_modified_time":"2020-05-26 15:33:30"
+                  },
+                  {
+                     "dish_modification_id":147,
+                     "name":"Sprite",
+                     "ingredient_id":39,
+                     "type":10,
+                     "brutto":200,
+                     "price":99.99,
+                     "photo_orig":"",
+                     "photo_large":"",
+                     "photo_small":"",
+                     "last_modified_time":"2020-05-26 15:33:30"
+                  }
+               ]
+            },
+            {
+               "dish_modification_group_id":30,
+               "name":"Eats",
+               "num_min":1,
+               "num_max":999,
+               "is_deleted":0,
+               "modifications":[
+                  {
+                     "dish_modification_id":144,
+                     "name":"French fries",
+                     "ingredient_id":0,
+                     "type":0,
+                     "brutto":0,
+                     "price":99.99,
+                     "photo_orig":"",
+                     "photo_large":"",
+                     "photo_small":"",
+                     "last_modified_time":"2020-05-26 15:33:30"
+                  },
+                  {
+                     "dish_modification_id":145,
+                     "name":"Snacks",
+                     "ingredient_id":178,
+                     "type":10,
+                     "brutto":200,
+                     "price":99.99,
+                     "photo_orig":"",
+                     "photo_large":"",
+                     "photo_small":"",
+                     "last_modified_time":"2020-05-26 15:33:30"
+                  }
+               ]
+            }
+         ],
+         "out":100,
+         "product_production_description":"",
+         "ingredients":[
+            {
+               "structure_id":"828",
+               "ingredient_id":"32",
+               "pr_in_clear":"0",
+               "pr_in_cook":"0",
+               "pr_in_fry":"0",
+               "pr_in_stew":"0",
+               "pr_in_bake":"0",
+               "structure_unit":"kg",
+               "structure_type":"1",
+               "structure_brutto":100,
+               "structure_netto":100,
+               "structure_lock":"1",
+               "structure_selfprice":"0",
+               "structure_selfprice_netto":"0",
+               "ingredient_name":"Sugar",
+               "ingredient_unit":"kg",
+               "ingredient_weight":0,
+               "ingredients_losses_clear":"0",
+               "ingredients_losses_cook":"0",
+               "ingredients_losses_fry":"0",
+               "ingredients_losses_stew":"0",
+               "ingredients_losses_bake":"0"
+            }
+         ]
       }
    ]
 }
@@ -186,6 +345,32 @@ price | The location’s product cost in kopecks
 profit | The location’s product net profit in kopecks
 profit_netto | The location’s product net profit without VAT in kopecks. Is returned if the 'Calculate cost and net profit' setting is enabled
 visible | The status of the product being visible at the location: 0 — not visible, 1 — visible
+
+Inside the `group_modifications` parameter, there is an array, each element of which contains the following parameters:
+
+Parameter | Description
+--------- | -----------
+dish_modification_group_id | Modifiers set ID
+name | Modifiers set name
+num_min | The minimum number of dish modifications that can be selected in an order from a set
+num_max | The maximum number of dish modifications that can be selected in an order from a set
+is_deleted | Is the set of dish modifications deleted. 0 - no, 1 - yes
+modifications | Array of modifications in a set
+
+Inside the `modifications` parameter, which is contained in `group_modifications`, there is an array, each element of which contains the following parameters:
+
+Parameter | Description
+--------- | -----------
+dish_modification_id | Modification ID
+name | Dish modification name
+ingredient_id | Ingredient ID (returned if it’s the product or ingredient)
+type | Type of dish modification: 1 - product, 2 - dish, 3 - prepack, 8 - product modification, 10 - ingredient, 0 - No extra ingredients
+brutto | Brutto of dish modification
+price | Price of dish modification in money
+photo_orig | Original photo of dish modification
+photo_large | Large photo of dish modification
+photo_small | Small photo of dish modification
+last_modified_time | Last modified time of dish modification
 
 Inside the `ingredients` parameter, there is an array, each element of which contains the following parameters:
 

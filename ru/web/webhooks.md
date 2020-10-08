@@ -128,6 +128,7 @@ clients_group | Группы клиентов
 promotion | Акции
 promotion_prize | Накоплени акции
 client_ewallet | Депозиты клиента
+loyalty rule | Правила перехода между группами клиентов
 
 ### client_ewallet
 
