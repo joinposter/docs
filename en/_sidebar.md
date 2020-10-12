@@ -1,6 +1,7 @@
 - [Introduction](/en/docs/v3/start/index)
     - [Sending requests](/en/docs/v3/start/request)
     - [Authorization in API](/en/docs/v3/start/authApi)
+    - [FAQ](/en/docs/v3/start/faq)
 
 
 - [Apps Marketplace](/en/docs/v3/market/index)
