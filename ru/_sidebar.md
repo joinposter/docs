@@ -166,6 +166,8 @@
         - [Получить бронь своего приложения](/docs/v3/web/incomingOrders/getOwnReservation)
     
     - [Заведения](/docs/v3/web/spots/index)
+        - [Список заведений](/docs/v3/web/spots/getSpots)
+        - [Свойства заведения](/docs/v3/web/spots/getSpot)
         - [Получить залы](/docs/v3/web/spots/getSpotTablesHalls)
         - [Получить столы](/docs/v3/web/spots/getTableHallTables)
     
