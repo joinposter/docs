@@ -15,7 +15,7 @@ $supply = [
         "from_storage"  => "1",
         "to_storage"    => "2"
     ],
-    "ingredient" => [
+    "ingredients" => [
         [
             "id"        => "138",
             "type"      => "1",
@@ -54,7 +54,7 @@ supplier_id | Supplier ID
 storage_id | The ID of the storage the supply is made to
 supply_comment | Comment to supply
 account_id | An optional parameter, the account ID in the accounting department the supply is attached to
-ingredient | Object array for supply
+ingredients | Object array for supply
 
 Each object of the `ingredient` array contains the following parameters
 
