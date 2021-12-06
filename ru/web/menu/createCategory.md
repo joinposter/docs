@@ -40,7 +40,7 @@ $data = sendRequest($url, 'post', $category);
 
 ## HTTP запрос
 
-`GET https://joinposter.com/api/menu.createCategory`
+`POST https://joinposter.com/api/menu.createCategory`
 
 ## POST-параметры запроса menu.createCategory
 
