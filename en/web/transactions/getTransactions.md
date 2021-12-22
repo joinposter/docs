@@ -56,6 +56,7 @@ $data = sendRequest($url);
             "product_sum":360,
             "payed_sum":0,
             "cert_sum":0,
+            "fiscal_company_id": 0,
             "bonus_sum":0,
             "bonus_accrual":0,
             "round_sum":0,
