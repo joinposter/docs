@@ -8,3 +8,4 @@
 - [Poster.interface.showApplicationIconAt: Показать иконку приложения](/docs/v3/pos/interfaces/interface-showApplicationIconAt)
 - [Poster.interface.scanBarcode: Сканировать штрихкод](/docs/v3/pos/interfaces/interface-scanBarcode)
 - [Poster.interface.showNotification: Показать всплывающее уведомление](/docs/v3/pos/interfaces/interface-showNotification)
+- [Poster.interface.showManageRightsModal: Показать окно с паролем админа](/docs/v3/pos/interfaces/interface-showManageRightsModal)
